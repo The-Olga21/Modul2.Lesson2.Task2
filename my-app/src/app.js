@@ -6,19 +6,8 @@ export const App = () => {
 	let [steps, setSteps] = useState(data);
 	let [activeIndex, setActiveIndex] = useState(0);
 
-	let isFirstStep;
-	if (activeIndex === 0) {
-		isFirstStep = true;
-	} else {
-		isFirstStep = false;
-	}
-
-	let isLastStep;
-	if (activeIndex === data.length - 1) {
-		isLastStep = true;
-	} else {
-		isLastStep = false;
-	}
+	const isFirstStep = activeIndex === 0;
+	const isLastStep = activeIndex === data.length - 1;
 
 	const onBackButtonClick = () => {
 		setActiveIndex(activeIndex - 1);
